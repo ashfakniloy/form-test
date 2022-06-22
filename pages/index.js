@@ -1,16 +1,12 @@
-import Student from "../components/Student";
+import Link from "next/link";
 
 export default function Home() {
-  const handleClick = () => {
-    console.log("clicked");
-  };
-
   return (
-    <div className="mx-44 my-10">
-      <h1>Form</h1>
-      <div className="my-10">
-        <Student />
-      </div>
+    <div className="flex flex-col space-y-4 p-14">
+      <h1 className="text-3xl mb-5">Form</h1>
+      <Link href="/student">Student page</Link>
+      <Link href="/teacher">Teacher page</Link>
+      <Link href="/parent">Parent page</Link>
     </div>
   );
 }

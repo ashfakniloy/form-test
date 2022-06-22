@@ -11,14 +11,12 @@ function Student() {
     first_name: "",
     last_name: "",
     gender: "",
-    date_of_birth: "",
-    roll: "",
+    occupation: "",
+    id_no: "",
     blood_group: "",
     religion: "",
     email: "",
-    class: "",
-    section: "",
-    admission_id: "",
+    address: "",
     phone: "",
     bio: "",
   };
@@ -27,14 +25,12 @@ function Student() {
     first_name: Yup.string().required("First name is required"),
     last_name: Yup.string().required("Last name is required"),
     gender: Yup.string().required("Gender is required"),
-    date_of_birth: Yup.string().required("Birthdate is required"),
-    roll: Yup.string().required("Roll is required"),
+    occupation: Yup.string().required("Occupation is required"),
+    id_no: Yup.string().required("ID number is required"),
     blood_group: Yup.string().required("Blood Group is required"),
     religion: Yup.string().required("Religion is required"),
     email: Yup.string().required("Email is required"),
-    class: Yup.string().required("Class is required"),
-    section: Yup.string().required("Section is required"),
-    admission_id: Yup.string().required("Admission ID is required"),
+    address: Yup.string().required("Address is required"),
     phone: Yup.string().required("Phone is required"),
     bio: Yup.string().required("Bio is required"),
   });
@@ -72,8 +68,8 @@ function Student() {
         {(formik) => (
           <Form>
             <ToastContainer />
-            <h1 className="text-2xl font-semibold">Student Form</h1>
-            <div className="pt-10 grid lg:grid-cols-4 text-sm gap-x-8 gap-y-5 md:gap-y-7">
+            <h1 className="text-2xl font-semibold">Parent Form</h1>
+            <div className="pt-10 grid grid-cols-1 lg:grid-cols-4 text-sm gap-x-8 gap-y-5 md:gap-y-7">
               <div className="">
                 <TextField label="First Name *" name="first_name" type="text" />
               </div>
@@ -89,15 +85,12 @@ function Student() {
                   options={["Male", "Female"]}
                 />
               </div>
+
               <div className="">
-                <TextField
-                  label="Date of Birth *"
-                  name="date_of_birth"
-                  type="date"
-                />
+                <TextField label="Occupation *" name="occupation" type="text" />
               </div>
               <div className="">
-                <TextField label="Roll *" name="roll" type="number" />
+                <TextField label="ID No *" name="id_no" type="number" />
               </div>
               <div className="">
                 <SelectField
@@ -127,22 +120,12 @@ function Student() {
                 <TextField label="Email *" name="email" type="email" />
               </div>
               <div className="">
-                <TextField label="Class *" name="class" type="text" />
-              </div>
-              <div className="">
-                <TextField label="Section *" name="section" type="text" />
-              </div>
-              <div className="">
-                <TextField
-                  label="Admission ID *"
-                  name="admission_id"
-                  type="number"
-                />
+                <TextField label="Address *" name="address" type="text" />
               </div>
               <div className="">
                 <TextField label="Phone *" name="phone" type="number" />
               </div>
-              <div className="col-span-2">
+              <div className="col-start-1 col-end-3">
                 <TextArea label="Short Bio *" name="bio" type="text" />
               </div>
             </div>
