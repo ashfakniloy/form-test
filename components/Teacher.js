@@ -138,7 +138,7 @@ function Student() {
               <div className="col-span-4 md:col-span-1">
                 <TextField label="Phone *" name="phone" type="number" />
               </div>
-              <div className="col-span-4 md:col-span-2">
+              <div className="col-start-1 col-end-5 md:col-end-3">
                 <TextArea label="Short Bio *" name="bio" type="text" />
               </div>
             </div>

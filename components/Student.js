@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { TextField, TextArea, SelectField } from "./InputField";
 
-const API_URL = "https://api.com";
+const API_URL = "http://192.168.0.20:8000/v1/student/signup";
 
 function Student() {
   const initialvalues = {
@@ -20,6 +20,7 @@ function Student() {
     section: "",
     admission_id: "",
     phone: "",
+    address: "",
     bio: "",
   };
 
@@ -36,31 +37,35 @@ function Student() {
     section: Yup.string().required("Section is required"),
     admission_id: Yup.string().required("Admission ID is required"),
     phone: Yup.string().required("Phone is required"),
+    address: Yup.string().required("Address is required"),
     bio: Yup.string().required("Bio is required"),
   });
 
-  const handleSubmit = (values, formik) => {
-    console.log("Data", values);
-  };
-
-  // const handleSubmit = async (values, formik) => {
-  //   const res = await fetch(`${API_URL}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(values),
-  //   });
-
-  //   if (res.ok) {
-  //     toast.success("Form Submitted Successfully!");
-  //     console.log(res);
-  //     formik.resetForm();
-  //   } else {
-  //     console.log("status", res.status);
-  //     toast.error("Something went wrong!");
-  //   }
+  // const handleSubmit = (values, formik) => {
+  //   console.log("Data", values);
   // };
+
+  const handleSubmit = async (values, formik) => {
+    const res = await fetch(`${API_URL}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      toast.success("Form Submitted Successfully!");
+      console.log(data);
+      // formik.resetForm();
+    } else {
+      console.log("status", data.message);
+      toast.error("Something went wrong!");
+    }
+  };
 
   return (
     <div className="mt-14">
@@ -142,7 +147,10 @@ function Student() {
               <div className="col-span-4 md:col-span-1">
                 <TextField label="Phone *" name="phone" type="number" />
               </div>
-              <div className="col-span-4 md:col-span-2">
+              <div className="col-span-4 md:col-span-1">
+                <TextField label="Address *" name="address" type="text" />
+              </div>
+              <div className="col-start-1 col-end-5 md:col-end-3">
                 <TextArea label="Short Bio *" name="bio" type="text" />
               </div>
             </div>
