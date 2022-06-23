@@ -73,14 +73,14 @@ function Student() {
           <Form>
             <ToastContainer />
             <h1 className="text-2xl font-semibold">Student Form</h1>
-            <div className="pt-10 grid lg:grid-cols-4 text-sm gap-x-8 gap-y-5 md:gap-y-7">
-              <div className="">
+            <div className="pt-10 grid md:grid-cols-4 text-sm md:gap-x-8 gap-y-5 md:gap-y-7">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="First Name *" name="first_name" type="text" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Last Name *" name="last_name" type="text" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <SelectField
                   label="Gender *"
                   name="gender"
@@ -89,17 +89,17 @@ function Student() {
                   options={["Male", "Female"]}
                 />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField
                   label="Date of Birth *"
                   name="date_of_birth"
                   type="date"
                 />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Roll *" name="roll" type="number" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <SelectField
                   label="Blood Group *"
                   name="blood_group"
@@ -108,7 +108,7 @@ function Student() {
                   options={["A+", "A-", "B+", "B-", "O+", "O-"]}
                 />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <SelectField
                   label="Religion *"
                   name="religion"
@@ -123,26 +123,26 @@ function Student() {
                   ]}
                 />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Email *" name="email" type="email" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Class *" name="class" type="text" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Section *" name="section" type="text" />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField
                   label="Admission ID *"
                   name="admission_id"
                   type="number"
                 />
               </div>
-              <div className="">
+              <div className="col-span-4 md:col-span-1">
                 <TextField label="Phone *" name="phone" type="number" />
               </div>
-              <div className="col-span-2">
+              <div className="col-span-4 md:col-span-2">
                 <TextArea label="Short Bio *" name="bio" type="text" />
               </div>
             </div>
